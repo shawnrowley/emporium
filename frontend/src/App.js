@@ -13,6 +13,10 @@ import PaymentScreen from "./screens/PaymentScreen.js";
 import OrderScreen from "./screens/OrderScreen.js";
 import OrderDetailScreen from "./screens/OrderDetailScreen.js";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import UsersScreen from "./screens/UsersScreen";
+import UserEditScreen from "./screens/UserEditScreen";
+import ProductListScreen from "./screens/ProductListScreen";
+import ProductEditScreen from "./screens/ProductEditScreen";
 
 function App() {
   return (
@@ -28,7 +32,19 @@ function App() {
           <Route path="/login" component={LoginScreen} />
           <Route path="/profile" component={ProfileScreen} />
           <Route path="/product/:id" component={ProductScreen} exact />
+          <Route
+            path="/admin/productlist"
+            component={ProductListScreen}
+            exact
+          />
+          <Route
+            path="/admin/product/:id/edit"
+            component={ProductEditScreen}
+            exact
+          />
           <Route path="/cart/:id?" component={CartScreen} />
+          <Route path="/admin/userlist" component={UsersScreen} exact />
+          <Route path="/admin/user/:id/edit" component={UserEditScreen} exact />
           <Route path="/" component={HomeScreen} exact />
         </Container>
       </main>
